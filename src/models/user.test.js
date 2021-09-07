@@ -1,7 +1,5 @@
 const userModel = require('./user');
-
 const mongoose = require('mongoose');
-
 const dotenv = require('dotenv');
 dotenv.config();
 
@@ -269,59 +267,3 @@ test('Updating user -- sucessful path with not found id', async () => {
     const updateResult = await userModel.updateUser(dummyId, update);
     expect(updateResult).toBe(404);    
 });
-
-
-// //const sinon = require("sinon");
-// const chaiAsPromised = require("chai-as-promised");
-// const chai = require("chai");
-// chai.use(chaiAsPromised);
-// const expect = chai.expect;
-// const sinon = require("sinon");
-
-// describe('desc...', function() {
-//     it('another desc...', function() {
-//         expect(1+2).to.equal(3);
-//         expect(3).to.be.a('number');
-//     });
-// });
-
-// describe('Fiding users', function() {
-//     // it('Finding users by Id', async function() {
-//     //     const user = await userModel.findUserById("123");
-//     //     expect(user).to.be.a('undefined');
-//     // });
-
-//     // it('Finding users by Id 2', async function() {
-//     //     var mock = sinon.mock(userModel);
-//     //     mock.expects("findUserById").once();
-//     //     const user = await userModel.findUserById("123");
-//     //     mock.verify();
-//     // });
-
-//     // it('Finding users by Id 3', async function() {
-//     //     var mock = sinon.mock(userModel);
-//     //     mock.expects("findUserById").once();
-//     //     const user = await userModel.findUserById("607f5843ff7c413188d88502");
-//     //     mock.verify();
-//     // });
-
-//     before(function() {
-//         mongoose.connect(
-//             "mongodb+srv://"+process.env.MONGO_USER+":"+process.env.MONGO_PWD+"@csc307.7ijdm.mongodb.net/"+process.env.MONGO_DB+"?retryWrites=true&w=majority",
-//             /* 'mongodb://localhost:27017/users', */
-//             {
-//               useNewUrlParser: true, //useFindAndModify: false,
-//               useUnifiedTopology: true
-//             }
-//           ).catch(error => console.log(error));        
-//     });
-    
-//     after(function() {
-//         mongoose.connection.close();
-//     });
-
-//     it('Fetching all users', async () => {
-//         const users = await userModel.find();
-//         expect(users).to.be.a('Array');
-//     });
-// });
